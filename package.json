@@ -6,7 +6,6 @@
   "scripts": {
     "clean:dist": "rimraf dist",
     "build": "npm run clean:dist; tsc",
-    "watch": "npx tsc --watch",
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/app.ts",
     "start": "npm run build; node dist/app.js",
     "lint": "eslint --fix src",

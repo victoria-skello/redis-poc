@@ -1,5 +1,5 @@
 import express, { Application } from 'express'
-import { initRedisClient } from './middleware/redis'
+import { initRedisClient, redisCachingMiddleware } from './middleware/redis'
 import { SERVER_PORT } from './config/lib/dotenv'
 import { UserController } from './controller/userController'
 
@@ -14,7 +14,7 @@ const initExpressServer = async () => {
     await initRedisClient()
 
     //Routes
-    app.get('/api/v1/users', UserController.retrieveAllUsers)
+    app.get('/api/v1/users', redisCachingMiddleware(), UserController.retrieveAllUsers)
 
     app.listen(PORT, () => {
         console.log(`Listening on port ${PORT}`)

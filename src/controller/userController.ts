@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 export const UserController = {
     retrieveAllUsers: async (req: Request, res: Response) => {
       // simulate the time to retrieve the user list
-      await new Promise((resolve) => setTimeout(resolve, 250));
+      await new Promise((resolve) => setTimeout(resolve, 250))
       let users = [
         { id: 1, email: "john.doe@example.com", name: "John Doe" },
         { id: 2, email: "jane.smith@example.com", name: "Jane Smith" },
@@ -15,7 +15,7 @@ export const UserController = {
         { id: 8, email: "david.ross@example.com", name: "David Ross" },
         { id: 9, email: "lisa.hall@example.com", name: "Lisa Hall" },
         { id: 10, email: "alex.garcia@example.com", name: "Alex Garcia" },
-      ];
-      res.json({ users });
+      ]
+      res.json({ users })
     },
-  };
+  }
