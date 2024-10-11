@@ -1,0 +1,36 @@
+{
+  "name": "redis-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:dist": "rimraf dist",
+    "build": "npm run clean:dist; tsc",
+    "dev": "ts-node-dev --respawn --pretty --transpile-only src/app.ts",
+    "start": "npm run build; node dist/app.js",
+    "lint": "eslint --fix src",
+    "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\""
+  },
+  "author": "Victoria DOE",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.5",
+    "@types/object-hash": "^3.0.6",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "D": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "object-hash": "^3.0.0",
+    "redis": "^4.7.0"
+  }
+}
